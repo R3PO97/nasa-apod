@@ -6,10 +6,12 @@ This is a ReactJS single-page application that displays the NASA Astronomy Pictu
 ## Features
 - Displays the Astronomy Picture of the Day with title and explanation.
 - Handles both images and videos from the APOD API.
-- Displays a message if the image is copyrighted.
-- Provides download button.
+- Displays a message if the media is copyrighted.
 
 ## Technologies
 - **ReactJS**: JavaScript library for building user interfaces.
 - **Axios**: HTTP client for making requests to the NASA API.
 - **CSS**: Styling to achieve a NASA-inspired look with dark colors and shades of grey.
+
+## Access the Web App
+You can access the web app at the following link: [https://R3PO97.github.io/nasa-apod](https://R3PO97.github.io/nasa-apod)
