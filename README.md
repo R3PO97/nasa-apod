@@ -5,6 +5,7 @@ This is a ReactJS single-page application that displays the NASA Astronomy Pictu
 
 ## Features
 - Displays the Astronomy Picture of the Day with title and explanation.
+- Includes a date selector for user input.
 - Handles both images and videos from the APOD API.
 - Displays a message if the media is copyrighted.
 

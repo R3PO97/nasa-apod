@@ -23,18 +23,21 @@ function App() {
   return (
     <div className="App">
       <div className="intro-section">
-        <h1>As a kid I wanted to be an astronaut.</h1>
+        <h1>Exploration is wired into our brains. If we can see the horizon, we want to know what’s beyond.</h1>
+        <cite>- Buzz Aldrin</cite>
       </div>
       <div className="apod-section">
-        <input 
-          type="date" 
-          value={date} 
-          onChange={handleDateChange} 
-          className="date-picker"
-        />
         {apod ? (
           <>
-            <h2>{apod.title}</h2>
+            <div className="header">
+              <h2>{apod.title}</h2>
+              <input 
+                type="date" 
+                value={date} 
+                onChange={handleDateChange} 
+                className="date-picker"
+              />
+            </div>
             {apod.copyright ? (
               <p>Today's content is copyrighted and cannot be displayed or downloaded.</p>
             ) : (
