@@ -6,6 +6,7 @@ This is a ReactJS single-page application that displays the NASA Astronomy Pictu
 ## Features
 - Displays the Astronomy Picture of the Day with title and explanation.
 - Includes a date selector for user input.
+- Displays the current rate limit status of API requests in a small, floating box in the top-right corner, which stays visible while scrolling.
 - Handles both images and videos from the APOD API.
 - Displays a message if the media is copyrighted.
 - Contains awe inspiring quote by Buzz Aldrin.

@@ -94,9 +94,42 @@ h1 {
   border: 1px solid #444;
   border-radius: 5px;
   font-size: 1rem;
-  max-width: 150px;
+  margin-right: 1rem;
 }
 
+.rate-limit-box {
+  background-color: #1c1c1c;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  text-align: left;
+  max-width: 130px;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.rate-limit-box h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #007bff;
+  border-bottom: 1px solid #007bff;
+  padding-bottom: 0.2rem;
+  text-align: center;
+}
+
+.rate-limit-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.rate-limit-table p {
+  margin: 0;
+}
 
 .quote-section {
   max-width: 800px;

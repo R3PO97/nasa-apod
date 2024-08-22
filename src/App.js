@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   const [apod, setApod] = useState(null);
+  const [rateLimit, setRateLimit] = useState(null);
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
   const handleDateChange = (e) => {
@@ -14,6 +15,10 @@ function App() {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
       .then(response => {
         setApod(response.data);
+        setRateLimit({
+          limit: response.headers['x-ratelimit-limit'],
+          remaining: response.headers['x-ratelimit-remaining']
+        });
       })
       .catch(error => {
         console.error("Error fetching the APOD", error);
@@ -22,6 +27,17 @@ function App() {
 
   return (
     <div className="App">
+      {rateLimit && (
+        <div className="rate-limit-box">
+          <h3>Rate Limit</h3>
+          <div className="rate-limit-table">
+            <p>Limit:</p>
+            <p>{rateLimit.limit}</p>
+            <p>Remaining:</p>
+            <p>{rateLimit.remaining}</p>
+          </div>
+        </div>
+      )}
       <div className="project-info">
         <h1>NASA APOD Viewer</h1>
         <p>NASA's Astronomy Picture of the Day (APOD) program showcases breathtaking images of the universe daily, often accompanied by a brief explanation from a professional astronomer. I've created a user interface that allows you to explore these images. Note that copyrighted images are not displayed in order to avoid wrongful use of copyrighted material. </p>
