@@ -29,10 +29,10 @@ function App() {
         {apod ? (
           <>
             <h2>{apod.title}</h2>
-            {apod.media_type === 'image' ? (
-              apod.copyright ? (
-                <p>This picture of the day is copyrighted and cannot be shown.</p>
-              ) : (
+            {apod.copyright ? (
+              <p>Today's content is copyrighted and cannot be displayed or downloaded.</p>
+            ) : (
+              apod.media_type === 'image' ? (
                 <>
                   <img src={apod.url} alt={apod.title} />
                   <div className="download-buttons">
@@ -41,21 +41,21 @@ function App() {
                     </button>
                   </div>
                 </>
+              ) : (
+                <>
+                  <iframe
+                    title="space-video"
+                    src={apod.url}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <div className="download-buttons">
+                    <button onClick={handleDownload} className="download-button">
+                      Download Video
+                    </button>
+                  </div>
+                </>
               )
-            ) : (
-              <>
-                <iframe
-                  title="space-video"
-                  src={apod.url}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <div className="download-buttons">
-                  <button onClick={handleDownload} className="download-button">
-                    Download Video
-                  </button>
-                </div>
-              </>
             )}
             <p>{apod.explanation}</p>
           </>
