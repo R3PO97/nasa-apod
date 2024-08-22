@@ -8,6 +8,7 @@ This is a ReactJS single-page application that displays the NASA Astronomy Pictu
 - Includes a date selector for user input.
 - Handles both images and videos from the APOD API.
 - Displays a message if the media is copyrighted.
+- Contains awe inspiring quote by Buzz Aldrin.
 
 ## Technologies
 - **ReactJS**: JavaScript library for building user interfaces.

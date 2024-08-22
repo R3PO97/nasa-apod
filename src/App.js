@@ -22,9 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="intro-section">
-        <h1>Exploration is wired into our brains. If we can see the horizon, we want to know what’s beyond.</h1>
-        <cite>- Buzz Aldrin</cite>
+      <div className="project-info">
+        <h1>NASA APOD Viewer</h1>
+        <p>NASA's Astronomy Picture of the Day (APOD) program showcases breathtaking images of the universe daily, often accompanied by a brief explanation from a professional astronomer. I've created a user interface that allows you to explore these images. Note that copyrighted images are not displayed in order to avoid wrongful use of copyrighted material. </p>
       </div>
       <div className="apod-section">
         {apod ? (
@@ -57,6 +57,10 @@ function App() {
         ) : (
           <p>Loading...</p>
         )}
+      </div>
+      <div className="quote-section">
+        <h1>Exploration is wired into our brains. If we can see the horizon, we want to know what’s beyond.</h1>
+        <cite>- Buzz Aldrin</cite>
       </div>
     </div>
   );
