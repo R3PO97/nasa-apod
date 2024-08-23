@@ -5,7 +5,18 @@ import './App.css';
 function App() {
   const [apod, setApod] = useState(null);
   const [rateLimit, setRateLimit] = useState(null);
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+
+  const [date, setDate] = useState(() => {
+    const estDate = new Date().toLocaleDateString("en-US", { 
+      timeZone: "America/New_York", 
+      year: "numeric", 
+      month: "2-digit", 
+      day: "2-digit" 
+    });
+  
+    const [month, day, year] = estDate.split("/");
+    return `${year}-${month}-${day}`;
+  });
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
